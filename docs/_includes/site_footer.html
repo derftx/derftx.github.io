@@ -1,8 +1,11 @@
 <footer class="footer">
   <nav class="level">
     <div class="level-item">
-      <a href="/" class="button is-ghost">index</a>
-      <a href="/blog" class="button is-ghost">blog</a>
+      <div class="buttons">
+        {% for item in site.data.sitemap %}
+        <a href="{{ item.url }}" class="button is-ghost">{{ item.text }}</a>
+        {% endfor %}
+      </div>
     </div>
   </nav>
 

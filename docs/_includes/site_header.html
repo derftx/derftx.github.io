@@ -3,13 +3,17 @@
     <div class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <a
-            class="button is-ghost is-light is-medium"
-            href="htttps://github.com/derftx/derftx.github.io"
-            rel="noopener noreferrer"
-            target="_blank"
-            >GitHub</a
-          >
+          <div class="buttons are-medium">
+            {% for item in site.data.navigation %}
+            <a
+              class="button is-ghost is-light"
+              href="{{ item.url }}"
+              rel="noopener noreferrer"
+              target="_blank"
+              >{{ item.text }}</a
+            >
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>

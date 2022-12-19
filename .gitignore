@@ -1,4 +1,8 @@
 # gitignore
 
+## Jekyll
+_site/
+.jekyll-cache/
+
 ## macOS
 .DS_Store

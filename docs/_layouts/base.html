@@ -6,9 +6,15 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
     <title>DERFTX &Colon; {{ page.title }}</title>
+
+    <link href="/assets/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
+    {% include site_header.html %}
+
     <main>{{ content }}</main>
+
+    {% include site_footer.html %}
   </body>
 </html>

@@ -10,9 +10,11 @@ title: blog
     <div class="field is-grouped">
       {% for post in site.posts %}
       <div class="control">
-        <div class="tags are-medium are-rounded has-addons">
-          <span class="tag is-black">{{ post.date | date: '%d %B %Y' }}</span>
-          <a class="tag" href="{{ pots.url }}">{{ post.title }}</a>
+        <div class="tags are-medium has-addons">
+          <span class="tag is-black is-rounded"
+            >{{ post.date | date: '%d %B %Y' }}</span
+          >
+          <a class="tag is-rounded" href="{{ post.url }}">{{ post.title }}</a>
         </div>
       </div>
       {% endfor %}

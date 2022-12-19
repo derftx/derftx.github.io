@@ -1,0 +1,7 @@
+collections:
+  pages:
+    output: true
+    permalink: /:name
+
+plugins:
+  - jekyll-sitemap

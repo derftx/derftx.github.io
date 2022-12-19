@@ -18,4 +18,5 @@ defaults:
 plugins:
   - jekyll-sitemap
 
+subtitle: frontend startup
 title: DERFTX

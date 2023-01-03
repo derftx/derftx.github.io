@@ -1,0 +1,15 @@
+<footer class="footer">
+  <nav class="level">
+    <div class="level-item">
+      <div class="buttons">
+        {% for item in site.data.sitemap %}
+        <a href="{{ item.url }}" class="button is-ghost">{{ item.text }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+
+  <div class="content has-text-centered">
+    <small>&copy; 2022 DERFTX &starf; fred belotte</small>
+  </div>
+</footer>

@@ -1,0 +1,16 @@
+---
+title: index
+---
+
+<section class="hero-body">
+  <div>
+    <h1 class="title is-1">{{ site.title }}</h1>
+    <h2 class="subtitle is-3">{{ 'startup' | downcase }}</h2>
+
+    <div class="tags are-medium">
+      {% for item in site.data.stack %}
+      <span class="tag is-rounded">{{ item }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>

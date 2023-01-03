@@ -1,0 +1,23 @@
+---
+title: blog
+---
+
+<section class="hero-body">
+  <div>
+    <h1 class="title is-1">{{ site.title }}</h1>
+    <h2 class="subtitle is-3">{{ 'newsroom' | downcase }}</h2>
+
+    <div class="field is-grouped">
+      {% for post in site.posts %}
+      <div class="control">
+        <div class="tags are-medium has-addons">
+          <span class="tag is-black is-rounded"
+            >{{ post.date | date: '%d %B %Y' }}</span
+          >
+          <a class="tag is-rounded" href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

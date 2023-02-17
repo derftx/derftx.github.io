@@ -32,7 +32,7 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.organzation=derftx
+            -Dsonar.organization=derftx
             -Dsonar.projectKey=derftx:derftx
             -Dsonar.sources=.
           projectBaseDir: jekyll

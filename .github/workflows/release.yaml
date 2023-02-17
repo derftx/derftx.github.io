@@ -1,6 +1,7 @@
 jobs:
   inspect:
     name: inspect_jekyll
+    secrets: inherit
     uses: derftx/derftx.github.io/.github/workflows/inspect.yaml@main
 
   deploy:

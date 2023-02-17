@@ -1,7 +1,7 @@
 jobs:
   inspect:
     name: inspect_jekyll
-    uses: derftx/derftx.github.io/.workflows/inspect.yaml@main
+    uses: derftx/derftx.github.io/.github/workflows/inspect.yaml@main
 
   deploy:
     environment:

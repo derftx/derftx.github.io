@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### fixed
 
+- fix the static website release workflow
+
 ### removed
 
 ### secured

@@ -8,7 +8,7 @@ jobs:
       - name: configure
         uses: actions/configure-pages@v3
       - name: build
-        uses: actions/buijekyll-build-pages@v1
+        uses: actions/jekyll-build-pages@v1
         with:
           destination: _site
           source: jekyll

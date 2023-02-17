@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning][semver].
 ### added
 
 - configure the static website inspect and release workflows
+- configure the repository static code analysis workflow
 
 ### changed
 

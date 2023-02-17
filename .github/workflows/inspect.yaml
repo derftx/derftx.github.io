@@ -1,0 +1,26 @@
+jobs:
+  build:
+    name: build_jekyll
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: configure
+        uses: actions/configure-pages@v3
+      - name: build
+        uses: actions/jekyll-build-pages@v1
+        with:
+          destination: _site
+          source: jekyll
+      - name: upload
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: _site
+
+name: inspect
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_call:

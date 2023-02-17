@@ -1,0 +1,26 @@
+jobs:
+  inspect:
+    name: inspect_jekyll
+    uses: derftx/derftx.github.io/.workflows/inspect.yaml@main
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    name: deploy_jekyll
+    needs: inspect
+    permissions:
+      id-token: write
+      pages: write
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        name: deploy
+        uses: actions/deploy-pages@v1
+
+name: release
+
+on:
+  push:
+    branches:
+      - main

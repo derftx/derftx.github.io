@@ -1,11 +1,9 @@
 # DERFTX
 
-[GitHub][github] :: [Twitter][twitter]
+[![inspect](https://github.com/derftx/derftx.github.io/actions/workflows/inspect.yaml/badge.svg?event=pull_request)](https://github.com/derftx/derftx.github.io/actions/workflows/inspect.yaml)
 
 ## license
 
 [MIT License][license]
 
-[github]: https://github.com/derftx
 [license]: https://github.com/derftx/derftx.github.io/blob/main/LICENSE
-[twitter]: https://twitter.com/derftx

@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### added
 
+- configure the static website inspect and release workflows
+
 ### changed
 
 ### deprecated
@@ -24,16 +26,6 @@ and this project adheres to [Semantic Versioning][semver].
 ### added
 
 - configure the repository static website
-
-### changed
-
-### deprecated
-
-### fixed
-
-### removed
-
-### secured
 
 [0.0.0]: https://github.com/derftx/derftx.github.io/releases
 [changelog]: https://keepachangelog.com/en/1.0.0

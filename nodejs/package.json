@@ -12,6 +12,10 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "c8 --reporter=lcovonly --reporter=text tap --no-coverage"
+  },
+  "devDependencies": {
+    "c8": "^7.13.0",
+    "tap": "^16.3.4"
   }
 }

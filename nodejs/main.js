@@ -1,3 +1,5 @@
+"use strict";
+
 import http from "node:http";
 import { server } from "./server.js";
 

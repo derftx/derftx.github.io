@@ -36,6 +36,16 @@ jobs:
             -Dsonar.projectKey=derftx:derftx
             -Dsonar.sources=.
           projectBaseDir: jekyll
+      - env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        name: scan
+        uses: sonarsource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.organization=derftx
+            -Dsonar.projectKey=derftx:derftx:nodejs
+            -Dsonar.sources=.
+          projectBaseDir: nodejs
 
 name: inspect
 

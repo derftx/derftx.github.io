@@ -18,6 +18,9 @@ jobs:
           path: _site
 
   test:
+    defaults:
+      run:
+        working-directory: nodejs
     name: test
     runs-on: ubuntu-22.04
     steps:

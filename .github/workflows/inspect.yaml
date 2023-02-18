@@ -40,7 +40,9 @@ jobs:
 
   scan:
     name: scan
-    needs: build
+    needs:
+      - build
+      - test
     runs-on: ubuntu-22.04
     steps:
       - name: checkout
@@ -54,7 +56,7 @@ jobs:
           path: nodejs/coverage
       - env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        name: scan
+        name: scan_jekyll
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
@@ -64,12 +66,12 @@ jobs:
           projectBaseDir: jekyll
       - env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        name: scan
+        name: scan_nodejs
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
             -Dsonar.organization=derftx
-            -Dsonar.javascript.lcov.reportPaths=coverage
+            -Dsonar.javascript.lcov.reportPaths=./coverage
             -Dsonar.projectKey=derftx:derftx:nodejs
             -Dsonar.sources=.
           projectBaseDir: nodejs

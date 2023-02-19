@@ -9,9 +9,10 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### added
 
-- configure the static website inspect and release workflows
-- configure the repository static code analysis workflow
-- configure the repository http service with node.js
+- configure the static website inspect and release workflows ([#3](https://github.com/derftx/derftx.github.io/issues/3))
+- configure the repository static code analysis workflow ([#4](https://github.com/derftx/derftx.github.io/issues/4))
+- configure the repository http service with node.js ([#9](https://github.com/derftx/derftx.github.io/issues/9))
+- change the node.js directory structure ([#12](https://github.com/derftx/derftx.github.io/issues/12))
 
 ### changed
 
@@ -19,7 +20,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### fixed
 
-- fix the static website release workflow
+- fix the static website release workflow ([#6](https://github.com/derftx/derftx.github.io/issues/6))
 
 ### removed
 
@@ -29,7 +30,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### added
 
-- configure the repository static website
+- configure the repository static website ([#1](https://github.com/derftx/derftx.github.io/issues/1))
 
 [0.0.0]: https://github.com/derftx/derftx.github.io/commits/0.0.0
 [changelog]: https://keepachangelog.com/en/1.0.0

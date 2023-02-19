@@ -1,6 +1,6 @@
 jobs:
   build:
-    name: build_jekyll
+    name: build
     runs-on: ubuntu-22.04
     steps:
       - name: checkout
@@ -18,7 +18,7 @@ jobs:
           path: _site
 
   scan:
-    name: scan_jekyll
+    name: scan
     needs: build
     runs-on: ubuntu-22.04
     steps:
@@ -26,16 +26,37 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: install
+        run: |
+          npm clean-install
+        working-directory: nodejs
+      - name: test
+        run: |
+          npm test
+        working-directory: nodejs
       - env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        name: scan
+        name: scan_jekyll
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
             -Dsonar.organization=derftx
-            -Dsonar.projectKey=derftx:derftx
+            -Dsonar.projectKey=derftx:derftx:jekyll
             -Dsonar.sources=.
           projectBaseDir: jekyll
+      - env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        name: scan_nodejs
+        uses: sonarsource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.coverage.exclusions=main.js,**/*.test.js
+            -Dsonar.exclusions=**/*.json
+            -Dsonar.organization=derftx
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.projectKey=derftx:derftx:nodejs
+            -Dsonar.sources=.
+          projectBaseDir: nodejs
 
 name: inspect
 

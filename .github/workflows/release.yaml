@@ -1,6 +1,6 @@
 jobs:
   inspect:
-    name: inspect_jekyll
+    name: inspect
     secrets: inherit
     uses: derftx/derftx.github.io/.github/workflows/inspect.yaml@main
 
@@ -8,7 +8,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    name: deploy_jekyll
+    name: deploy
     needs: inspect
     permissions:
       id-token: write

@@ -17,43 +17,23 @@ jobs:
         with:
           path: _site
 
-  test:
-    defaults:
-      run:
-        working-directory: nodejs
-    name: test
-    runs-on: ubuntu-22.04
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: install
-        run: |
-          npm clean-install
-      - name: test
-        run: |
-          npm test
-      - name: upload
-        uses: actions/upload-artifact@v3
-        with:
-          name: test_coverage
-          path: nodejs/coverage/lcov.info
-
   scan:
     name: scan
-    needs:
-      - build
-      - test
+    needs: build
     runs-on: ubuntu-22.04
     steps:
       - name: checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: download
-        uses: actions/download-artifact@v3
-        with:
-          name: test_coverage
-          path: nodejs/coverage
+      - name: install
+        run: |
+          npm clean-install
+        working-directory: nodejs
+      - name: test
+        run: |
+          npm test
+        working-directory: nodejs
       - env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         name: scan_jekyll
@@ -61,7 +41,7 @@ jobs:
         with:
           args: >
             -Dsonar.organization=derftx
-            -Dsonar.projectKey=derftx:derftx
+            -Dsonar.projectKey=derftx:derftx:jekyll
             -Dsonar.sources=.
           projectBaseDir: jekyll
       - env:
@@ -70,6 +50,8 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
+            -Dsonar.coverage.exclusions=**/*.test.js
+            -Dsonar.exclusions=**/*.json
             -Dsonar.organization=derftx
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
             -Dsonar.projectKey=derftx:derftx:nodejs

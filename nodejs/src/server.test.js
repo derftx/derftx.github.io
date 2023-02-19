@@ -4,14 +4,14 @@ import { test } from "tap";
 import { server } from "./server.js";
 
 test("server module", ({ doesNotThrow, end, throws }) => {
-  const response = {
+  const responseMock = {
     end: () => {},
     setHeader: (key, value) => {},
     write: (data) => {},
   };
 
   doesNotThrow(() => {
-    server(null, response);
+    server(null, responseMock);
   });
 
   throws(() => {

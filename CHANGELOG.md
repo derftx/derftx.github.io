@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - configure the static website inspect and release workflows
 - configure the repository static code analysis workflow
+- configure the repository http service with node.js
 
 ### changed
 
@@ -30,7 +31,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - configure the repository static website
 
-[0.0.0]: https://github.com/derftx/derftx.github.io/releases
+[0.0.0]: https://github.com/derftx/derftx.github.io/commits/0.0.0
 [changelog]: https://keepachangelog.com/en/1.0.0
 [semver]: https://semver.org/spec/v2.0.0.html
 [unreleased]: https://github.com/derftx/derftx.github.io

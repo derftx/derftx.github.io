@@ -1,10 +1,21 @@
 jobs:
   build:
     name: build
-    uses: fredbelotte/fredbelotte/workflows/jekyll/build.yaml@main
-    with:
-      jekyll_destination: _site
-      jekyll_source: jekyll
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: configure
+        uses: actions/configure-pages@v3
+      - name: build
+        uses: actions/jekyll-build-pages@v1
+        with:
+          destination: _site
+          source: jekyll
+      - name: upload
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: _site
 
   scan:
     name: scan

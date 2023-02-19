@@ -50,12 +50,11 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.coverage.exclusions=main.js,**/*.test.js
-            -Dsonar.exclusions=**/*.json
-            -Dsonar.organization=derftx
+            -Dsonar.coverage.exclusions=**/*.spec.js,**/*.test.js
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.organization=derftx
             -Dsonar.projectKey=derftx:derftx:nodejs
-            -Dsonar.sources=.
+            -Dsonar.sources=./src
           projectBaseDir: nodejs
 
 name: inspect

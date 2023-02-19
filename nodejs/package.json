@@ -7,7 +7,7 @@
   ],
   "license": "MIT",
   "main": "main.js",
-  "name": "derftx",
+  "name": "@derftx/derftx",
   "type": "module",
   "version": "0.0.0",
   "scripts": {

@@ -17,6 +17,29 @@ jobs:
         with:
           path: _site
 
+  scan_dotnet:
+    name: scan_dotnet
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: configure
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7
+      - name: install
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+      - name: scan
+        run: |
+          dotnet sonarscanner begin -d:sonar.host.url='https://sonarcloud.io' -d:sonar.login=${{secrets.SONAR_TOKEN}} -k:'derftx:derftx:dotnet' -o:'derftx'
+          dotnet build
+          dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile='**/program.cs'
+          dotnet sonarscanner end -d:sonar.login=${{secrets.SONAR_TOKEN}}
+
   scan:
     name: scan
     needs: build

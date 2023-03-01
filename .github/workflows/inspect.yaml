@@ -30,8 +30,8 @@ jobs:
           dotnet sonarscanner end -d:sonar.login=${{secrets.SONAR_TOKEN}}
         working-directory: dotnet
 
-  scan:
-    name: scan
+  scan_repository:
+    name: scan_repository
     needs: build
     runs-on: ubuntu-22.04
     steps:

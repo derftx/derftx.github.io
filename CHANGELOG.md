@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning][semver].
 - configure the static website inspect and release workflows ([#3](https://github.com/derftx/derftx.github.io/issues/3))
 - configure the repository static code analysis workflow ([#4](https://github.com/derftx/derftx.github.io/issues/4))
 - configure the repository http service with node.js ([#9](https://github.com/derftx/derftx.github.io/issues/9))
+- configure the repository http service with dotnet ([#10](https://github.com/derftx/derftx.github.io/issues/10))
 - change the node.js directory structure ([#12](https://github.com/derftx/derftx.github.io/issues/12))
 
 ### changed

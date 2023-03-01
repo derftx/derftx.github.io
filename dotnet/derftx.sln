@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "derftx.service.test", "derftx.service.test\derftx.service.test.csproj", "{0FA0B90B-8A63-4296-BF10-A4BC5699D4E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "derftx.service", "derftx.service\derftx.service.csproj", "{F7EC9DB0-8EA1-4295-B0A4-D061AF8EEBB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FA0B90B-8A63-4296-BF10-A4BC5699D4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA0B90B-8A63-4296-BF10-A4BC5699D4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA0B90B-8A63-4296-BF10-A4BC5699D4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA0B90B-8A63-4296-BF10-A4BC5699D4E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7EC9DB0-8EA1-4295-B0A4-D061AF8EEBB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7EC9DB0-8EA1-4295-B0A4-D061AF8EEBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7EC9DB0-8EA1-4295-B0A4-D061AF8EEBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7EC9DB0-8EA1-4295-B0A4-D061AF8EEBB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

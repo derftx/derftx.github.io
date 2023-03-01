@@ -1,5 +1,9 @@
 # gitignore
 
+## .NET Core
+bin/
+obj/
+
 ## c8
 coverage/
 
@@ -12,3 +16,6 @@ _site/
 
 ## Node.js
 node_modules/
+
+## xUnit
+coverage.*

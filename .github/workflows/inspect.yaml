@@ -1,21 +1,10 @@
 jobs:
   build:
     name: build
-    runs-on: ubuntu-22.04
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: configure
-        uses: actions/configure-pages@v3
-      - name: build
-        uses: actions/jekyll-build-pages@v1
-        with:
-          destination: _site
-          source: jekyll
-      - name: upload
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: _site
+    uses: fredbelotte/fredbelotte/.github/workflows/build.yaml@main
+    with:
+      jekyll_destination: _site
+      jekyll_source: jekyll
 
   scan_dotnet:
     name: scan_dotnet
@@ -35,7 +24,7 @@ jobs:
           dotnet tool install --global dotnet-sonarscanner
       - name: scan
         run: |
-          dotnet sonarscanner begin -d:sonar.host.url='https://sonarcloud.io' -d:sonar.login=${{secrets.SONAR_TOKEN}} -k:'derftx:derftx:dotnet' -o:'derftx'
+          dotnet sonarscanner begin -d:sonar.coverage.exclusions='**/program.cs' -d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml' -d:sonar.host.url='https://sonarcloud.io' -d:sonar.login=${{secrets.SONAR_TOKEN}} -k:'derftx:derftx:dotnet' -o:'derftx'
           dotnet build
           dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile='**/program.cs'
           dotnet sonarscanner end -d:sonar.login=${{secrets.SONAR_TOKEN}}

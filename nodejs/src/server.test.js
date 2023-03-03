@@ -3,7 +3,7 @@
 import { test } from "tap";
 import { server } from "./server.js";
 
-test("server module", ({ doesNotThrow, end, throws }) => {
+test("server module", ({ doesNotThrow, end }) => {
   const reqMock = {
     method: null,
     url: null,

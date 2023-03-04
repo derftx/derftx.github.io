@@ -1,7 +1,6 @@
 "use strict";
 
 import pino from "pino";
-import morgan from "morgan";
 
 export const logger = pino({
   formatters: {
@@ -11,5 +10,3 @@ export const logger = pino({
   },
   level: process.env.LOG_LEVEL || "debug",
 });
-
-export const loggerHttp = morgan("dev");

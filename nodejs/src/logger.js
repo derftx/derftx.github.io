@@ -1,16 +1,18 @@
 "use strict";
 
-// import pino from "pino";
+// import { pinoHttp } from "pino-http";
 
-// export const logger = pino({
-//   formatters: {
-//     level: (label) => {
-//       return { level: label };
+// export const log = pinoHttp({
+//   logger: {
+//     formatters: {
+//       level: (label) => {
+//         return { level: label };
+//       },
 //     },
+//     level: process.env.LOG_LEVEL || "debug",
 //   },
-//   level: process.env.LOG_LEVEL || "debug",
 // });
 
-import morgan from "morgan";
+import { pinoHttp } from "pino-http";
 
-export const logger = morgan("dev");
+export const log = pinoHttp();

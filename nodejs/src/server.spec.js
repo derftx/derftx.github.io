@@ -11,6 +11,7 @@ test("server module", ({ doesNotThrow, end }) => {
 
   const resMock = {
     end: () => {},
+    on: () => {},
     setHeader: (key, value) => {},
     write: (data) => {},
   };

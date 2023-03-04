@@ -19,6 +19,6 @@
     "tap": "^16.3.4"
   },
   "dependencies": {
-    "pino-http": "^8.3.3"
+    "pino": "^8.11.0"
   }
 }

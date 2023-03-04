@@ -5,7 +5,7 @@ import { log } from "./logger.js";
 
 test("logger module", ({ end, equal, ok }) => {
   ok(log);
-  //equal("debug", log.logger.level);
+  equal("debug", log.level);
 
   end();
 });

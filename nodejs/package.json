@@ -11,11 +11,16 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
+    "dev": "node main.js | pino-pretty",
     "start": "node main.js",
     "test": "c8 --reporter=lcovonly --reporter=text tap --no-coverage"
   },
   "devDependencies": {
     "c8": "^7.13.0",
+    "pino-pretty": "^9.4.0",
     "tap": "^16.3.4"
+  },
+  "dependencies": {
+    "pino": "^8.11.0"
   }
 }

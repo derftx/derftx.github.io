@@ -1,7 +1,13 @@
 "use strict";
 
-export const server = (request, response) => {
-  response.setHeader("content-type", "application/json");
-  response.write(JSON.stringify({ runtime: "Node.js" }));
-  response.end();
+import { log } from "./logger.js";
+
+export const server = (req, res) => {
+  const { headers, method, url } = req;
+
+  log.info(headers, `${method} - ${url}`);
+
+  res.setHeader("content-type", "application/json");
+  res.write(JSON.stringify({ runtime: "Node.js" }));
+  res.end();
 };

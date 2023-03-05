@@ -3,9 +3,9 @@
 import { log } from "./logger.js";
 
 export const server = (req, res) => {
-  const { method, url } = req;
+  const { headers, method, url } = req;
 
-  log.info({ method, url });
+  log.info(headers, `${method} - ${url}`);
 
   res.setHeader("content-type", "application/json");
   res.write(JSON.stringify({ runtime: "Node.js" }));

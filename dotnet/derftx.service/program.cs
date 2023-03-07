@@ -19,6 +19,6 @@ app.UseExceptionHandler((handler) => {
 
 Log.Information("program file");
 
-app.Run(Server.Root);
+app.Run(Server.Index);
 
 app.Run();

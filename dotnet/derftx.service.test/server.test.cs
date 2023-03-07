@@ -8,7 +8,7 @@ namespace derftx.service.test
     [Fact]
     public void Test_Server_Root()
     {
-      Assert.NotNull(Server.Root(new DefaultHttpContext()));
+      Assert.NotNull(Server.Index(new DefaultHttpContext()));
     }
   }
 }

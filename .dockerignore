@@ -1,0 +1,13 @@
+# dockerignore
+
+## c8
+**/coverage/
+
+## Docker
+.dockerignore
+
+## macOS
+**/.DS_Store
+
+## Node.js
+**/node_modules/

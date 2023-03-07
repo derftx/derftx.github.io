@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning][semver].
 - configure the repository http service with dotnet ([#10](https://github.com/derftx/derftx.github.io/issues/10))
 - change the node.js directory structure ([#12](https://github.com/derftx/derftx.github.io/issues/12))
 - configure the repository structured logging library for node.js ([#14](https://github.com/derftx/derftx.github.io/issues/14))
+- configure the repository structured logging library for dotnet ([#15](https://github.com/derftx/derftx.github.io/issues/15))
 
 ### changed
 

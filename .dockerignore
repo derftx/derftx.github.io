@@ -1,5 +1,9 @@
 # dockerignore
 
+## .NET Core
+**/bin/
+**/obj/
+
 ## c8
 **/coverage/
 
@@ -11,3 +15,6 @@
 
 ## Node.js
 **/node_modules/
+
+## xUnit
+**/coverage.*

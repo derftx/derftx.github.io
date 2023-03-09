@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning][semver].
 ### added
 
 - configure the repository deployment image for node.js [#16](https://github.com/derftx/derftx.github.io/issues/16)
+- configure the repository deployment image for dotnet [#17](https://github.com/derftx/derftx.github.io/issues/17)
 
 ### changed
 

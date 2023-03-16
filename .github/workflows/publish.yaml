@@ -1,4 +1,5 @@
 env:
+  IMAGE: derftx
   REGISTRY: ghcr.io
 
 jobs:
@@ -14,6 +15,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
+      - id: metadata
+        name: configure
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE }}/dotnet
 
   pack_nodejs:
     name: pack_nodejs
@@ -27,6 +33,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
+      - id: metadata
+        name: configure
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY}}/${{ env.IMAGE }}/nodejs
 
 name: publish
 

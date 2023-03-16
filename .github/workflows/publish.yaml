@@ -61,3 +61,7 @@ on:
       - completed
     workflows:
       - inspect
+
+permissions:
+  contents: read
+  packages: write

@@ -1,3 +1,6 @@
+env:
+  REGISTRY: ghcr.io
+
 jobs:
   pack_dotnet:
     name: pack_dotnet
@@ -5,6 +8,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+      - name: login
+        uses: docker/login-action@v2
+        with:
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
 
   pack_nodejs:
     name: pack_nodejs
@@ -12,6 +21,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+      - name: login
+        uses: docker/login-action@v2
+        with:
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
 
 name: publish
 

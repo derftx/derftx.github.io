@@ -1,0 +1,67 @@
+env:
+  IMAGE_NAME: derftx
+  REGISTRY: ghcr.io
+
+jobs:
+  pack_dotnet:
+    name: pack_dotnet
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: login
+        uses: docker/login-action@v2
+        with:
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+      - id: metadata
+        name: configure
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/dotnet
+      - name: pack
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: .docker/dotnet.dockerfile
+          push: true
+          tags: ${{ steps.metadata.outputs.tags }}
+
+  pack_nodejs:
+    name: pack_nodejs
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: login
+        uses: docker/login-action@v2
+        with:
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+      - id: metadata
+        name: configure
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY}}/${{ env.IMAGE_NAME }}/nodejs
+      - name: pack
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: .docker/nodejs.dockerfile
+          push: true
+          tags: ${{ steps.metadata.outputs.tags }}
+
+name: publish
+
+on:
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - inspect
+
+permissions:
+  contents: read
+  packages: write

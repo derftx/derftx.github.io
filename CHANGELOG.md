@@ -9,10 +9,6 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### added
 
-- configure the repository deployment image for node.js [#16](https://github.com/derftx/derftx.github.io/issues/16)
-- configure the repository deployment image for dotnet [#17](https://github.com/derftx/derftx.github.io/issues/17)
-- configure the repository publish workflow [#18](https://github.com/derftx/derftx.github.io/issues/18)
-
 ### changed
 
 ### deprecated
@@ -22,6 +18,14 @@ and this project adheres to [Semantic Versioning][semver].
 ### removed
 
 ### secured
+
+## [0.2.0] :: 2023-04-04
+
+### added
+
+- configure the repository deployment image for node.js [#16](https://github.com/derftx/derftx.github.io/issues/16)
+- configure the repository deployment image for dotnet [#17](https://github.com/derftx/derftx.github.io/issues/17)
+- configure the repository publish workflow [#18](https://github.com/derftx/derftx.github.io/issues/18)
 
 ## [0.1.0] :: 2023-03-07
 
@@ -45,6 +49,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - configure the repository static website [#1](https://github.com/derftx/derftx.github.io/issues/1)
 
+[0.2.0]: https://github.com/derftx/derftx.github.io/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/derftx/derftx.github.io/compare/0.0.0...0.1.0
 [0.0.0]: https://github.com/derftx/derftx.github.io/commits/0.0.0
 [changelog]: https://keepachangelog.com/en/1.0.0

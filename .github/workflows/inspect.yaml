@@ -82,6 +82,38 @@ jobs:
             -Dsonar.sources=./src
           projectBaseDir: nodejs
 
+  scan_react:
+    defaults:
+      run:
+        working-directory: react
+    name: scan_react
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: configure
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+      - name: install
+        run: npm clean-install
+      - name: test
+        run: npm test
+      - env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        name: scan
+        uses: sonarsource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.organization=derftx
+            -Dsonar.projectKey=derftx:derftx:react
+            -Dsonar.sources=./src
+          projectBaseDir: react
+
 name: inspect
 
 on:

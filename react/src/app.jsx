@@ -1,3 +1,4 @@
+import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 
 export default function App() {
@@ -7,7 +8,7 @@ export default function App() {
 
       <main>index page</main>
 
-      <footer>&copy; 2023 DERFTX</footer>
+      <Footer />
     </>
   );
 }

@@ -1,7 +1,9 @@
+import { Header } from "./components/header";
+
 export default function App() {
   return (
     <>
-      <header>DERFTX</header>
+      <Header />
 
       <main>index page</main>
 

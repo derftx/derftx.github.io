@@ -17,5 +17,8 @@ _site/
 ## Node.js
 node_modules/
 
+## Vite
+dist/
+
 ## xUnit
 coverage.*
